@@ -1,0 +1,3 @@
+source nolbu-ts/bin/activate
+fastapi dev main.py
+nolbu-ts-backend

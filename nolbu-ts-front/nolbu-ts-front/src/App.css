@@ -1,0 +1,52 @@
+#cutout {
+  display: inline-block;
+  overflow: auto;
+}
+
+@media only screen and (max-width: 750px) {
+  .window {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .window {
+    width: 50%;
+
+    margin-left: 25%;
+  }
+}
+
+& > * {
+  margin-bottom: 1rem;
+}
+
+& > div > * {
+  margin-bottom: 1rem;
+}
+
+.contentDiv {
+  margin: 1rem;
+}
+
+.labelNumber {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.labelNumber span {
+  text-align: left;
+  flex: 1;
+}
+
+.sm_number {
+  text-align: right;
+  flex: 8;
+}
+
+NumberInput {
+  height: 100%;
+}

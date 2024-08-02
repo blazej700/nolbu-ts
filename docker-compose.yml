@@ -1,0 +1,27 @@
+services:
+  proxy:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+    networks: 
+      - internal_network
+  nolbu-ts-backend:
+    image: 'nolbu-ts-backend:1'
+    ports:
+      - '10002:80'
+  nolbu-ts-front:
+    image: 'nolbu-ts-front:1'
+    ports:
+      - '10001:80'
+    networks: 
+      - internal_network
+
+networks:
+  internal_network:
+    name: internal_network
